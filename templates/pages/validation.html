@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>welcome ♥♥</title>
+    {% load static %}
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 500px;
+        }
+        .logo {
+            width: 550px;
+        }
+        input[type="file"] {
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            height: 50px;
+            width: 300px;
+            margin-top: 20px;
+            text-align: center;
+            background-color: #01310d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'pages/images/uu.jpg' %}" class="logo" alt="Logo">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image">Choose an image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            <input type="submit" value="Analyser votre image">
+        </form>
+    </div>
+</body>
+</html>
